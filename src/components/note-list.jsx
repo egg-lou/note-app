@@ -1,8 +1,9 @@
 import NoteCard from './note-card'
+import { noteListStyles } from './styles'
 
 export default function NoteList({ notes, onDelete, onEdit }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className={noteListStyles.gridContainer}>
       {notes.map(note => (
         <NoteCard
           key={note.id}
