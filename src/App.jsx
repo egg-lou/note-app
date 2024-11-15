@@ -2,10 +2,12 @@ import { useState } from 'react'
 import NoteList from './components/note-list'
 import NoteForm from './components/note-form'
 import { Plus } from 'lucide-react'
+import { useLocalStorage } from './hooks/useLocalStorage'
 import { appStyles } from './components/styles'
 
 function App() {
-  const [notes, setNotes] = useState([])
+  // const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useLocalStorage('notes', [])
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingNote, setEditingNote] = useState(null)
 
